@@ -2,9 +2,8 @@
 
 
 #include "Player/AuraPlayerController.h"
-
 #include "EnhancedInputSubsystems.h"
-
+#include "EnhancedInputComponent.h"
 
 AAuraPlayerController::AAuraPlayerController()
 {
@@ -29,3 +28,15 @@ void AAuraPlayerController::BeginPlay()
 	InputModeData.SetHideCursorDuringCapture(false);
 	SetInputMode(InputModeData);
 }
+
+void AAuraPlayerController::SetupInputComponent()
+{
+	/*Super::SetupInputComponent();*/
+
+	UEnhancedInputComponent* EnchancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+}
+
+void AAuraPlayerController::Move(const FInputActionValue& InputActinValue)
+{
+}
+
